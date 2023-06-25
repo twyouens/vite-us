@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
 import HomePage from "./pages/home.page";
 import AboutPage from "./pages/about.page";
+import SignInPage from "./pages/signin.page";
 
 const AppRouter = () => {
     return(
@@ -23,6 +24,13 @@ const AppRouter = () => {
                                 <li>
                                     <Link className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" to="/about-us">About Us</Link>
                                 </li>
+                                <li>
+                                    <Link to="/sign-in">
+                                        <div className="relative w-6 h-6 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+                                            <svg className="absolute w-8 h-8 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
+                                        </div>
+                                    </Link>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -31,6 +39,7 @@ const AppRouter = () => {
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/about-us" element={<AboutPage />} />
+                <Route path="/sign-in" element={<SignInPage />} />
             </Routes>
         </Router>
     )
